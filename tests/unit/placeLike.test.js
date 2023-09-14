@@ -8,8 +8,4 @@ describe("place like", () => {
 
     expect(user.hasLiked[0]).toBe("1");
   });
-
-  it("should notify admin when someone has placed a like", async () => {
-    //TODO
-  });
 });
