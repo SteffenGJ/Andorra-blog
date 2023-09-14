@@ -20,7 +20,7 @@ contentRoute.get("/images", async (req, res, next) => {
     const images = allPosts.map((post) => post.imageURLs).flat();
     const finalImages = images.map((img) => ({
       src: img,
-      height: 500,
+      height: 400,
       width: 300,
     }));
 
