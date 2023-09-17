@@ -15,4 +15,20 @@ userRouter.post("/", isUsernameTaken, async (req, res, next) => {
   }
 });
 
+userRouter.post("/login", async (req, res, next) => {
+  try {
+    const username = req.body.username;
+
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.json({ id: null });
+    }
+
+    res.json({ id: user._id });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = userRouter;
